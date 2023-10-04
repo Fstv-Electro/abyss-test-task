@@ -1,0 +1,12 @@
+.CategoryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+
+.CategoryName {
+  padding: 8px;
+  color: white;
+  background-color: rgb(245, 138, 45);
+}

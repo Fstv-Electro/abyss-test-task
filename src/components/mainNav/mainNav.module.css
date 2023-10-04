@@ -1,0 +1,44 @@
+.ArrowLeft {
+  position: fixed;
+  padding: 12px 52px;
+  border: transparent;
+  color: white;
+  left: 0;
+  top: 50%;
+  rotate: -90deg;
+  transform: translateY(-50%);
+  background-color: rgba(125, 125, 125, 0.5);
+}
+
+.ArrowTop {
+  position: fixed;
+  padding: 12px 52px;
+  border: transparent;
+  color: white;
+  top: 100px;
+  left: 50%;
+  background-color: rgba(125, 125, 125, 0.5);
+}
+
+.ArrowRight {
+  position: fixed;
+  padding: 12px 52px;
+  border: transparent;
+  color: white;
+  right: 0;
+  top: 50%;
+  rotate: 90deg;
+  transform: translateY(-50%);
+  background-color: rgba(125, 125, 125, 0.5);
+}
+
+.ArrowBottom {
+  position: fixed;
+  padding: 12px 52px;
+  border: transparent;
+  color: white;
+  left: 50%;
+  bottom: 0;
+  rotate: 180deg;
+  background-color: rgba(125, 125, 125, 0.5);
+}
