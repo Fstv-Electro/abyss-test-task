@@ -1,7 +1,9 @@
-.CategoryItem {
+.CategoryList {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   gap: 4px;
 }
 
@@ -9,4 +11,25 @@
   padding: 8px;
   color: white;
   background-color: rgb(245, 138, 45);
+}
+
+.CategoryItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 4px;
+}
+
+.CategoryInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border: transparent;
+  outline: transparent;
+  color: black;
+  background-color: white;
 }

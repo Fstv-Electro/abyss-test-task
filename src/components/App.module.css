@@ -8,6 +8,10 @@
 
 .MainContainer {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 24px 0;
   width: 100%;
   height: 100%;
