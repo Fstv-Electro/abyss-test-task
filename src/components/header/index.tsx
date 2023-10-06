@@ -16,7 +16,7 @@ export const Header: FC = () => {
                 <p>Services </p>
                 <div className='Action-list'>
                     <button type='button' className='Button-action'>LIST VIEW</button>
-                    <button type='button' className='Button-action'>Compass</button>
+                    <button type='button' className='Button-action' onClick={() => window.scrollTo(window.screen.availWidth*0.3,window.screen.availHeight*1.2)}>Compass</button>
                     <div className='Scaling-container'>
                         <button type='button' className='Button-action' onClick={() => {
                             window.resizeBy(window.screen.availWidth*0.9, window.screen.availHeight*0.9)
