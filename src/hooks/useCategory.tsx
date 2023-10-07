@@ -19,5 +19,10 @@ export const useCategory = () => {
             return {...tree,  subCategories: updated} 
     }
 
-    return {addCategory, deleteCategory}
+    const editCategory = (tree: any, id: number, newCategory: ICategoryList): any => {
+        const updated = tree.subCategories.map((item: ICategoryList) => item.id === id ? item = newCategory :  editCategory(item, id, newCategory));
+        return {...tree,  subCategories: updated}
+    }
+
+    return {addCategory, deleteCategory, editCategory}
 }

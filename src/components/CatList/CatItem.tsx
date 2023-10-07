@@ -3,13 +3,16 @@ import { ICategoryListProps } from "../../types/CommonTypes"
 import styles from './Category.module.css';
 
 
-export const CatItem = ({ catList, handleAddCategory, handleDeleteCategory }: ICategoryListProps) => {
+
+export const CatItem = ({ catList, handleAddCategory, handleDeleteCategory, handleEditCategory }: ICategoryListProps) => {
     const [showInput, setShowInput] = useState(false);
     const [catBody, setCatBody] = useState<string>('');
+    const [isEdit, setIsEdit] = useState(false);
+    const randomId = Math.floor(Math.random() * 1000000000);
 
     const handleAdd = () => {
         const newCategory = {
-            id: Math.floor(Math.random() * 1000000000),
+            id: randomId,
             body: catBody,
             subCategories: [],
         };
@@ -18,36 +21,59 @@ export const CatItem = ({ catList, handleAddCategory, handleDeleteCategory }: IC
         setShowInput(false);
     }
 
-
+    const handleEdit = () => {
+        const newCategory = {
+            id: catList.id,
+            body: catBody,
+            subCategories: catList.subCategories,
+        };
+        handleEditCategory(catList.id, newCategory);
+        setIsEdit(false)
+    }
 
     return (
-        <div className={styles.CategoryContainer}>
+        <li className={styles.CategoryContainer}>
+            {isEdit ? (
+                <div className={`${catList.body && styles.CategoryItemContainer}`}>
+                <input type="text" className={styles.ItemText} autoFocus onChange={(e) => setCatBody(e.target.value)}/>
+                    <div className={styles.BtnContainer}>
+                        <button type="button" className={styles.Btn} onClick={handleEdit}>+</button>
+                        <button type="button" className={styles.Btn} onClick={() => setIsEdit(false)}>x</button>
+                    </div>
+                </div>
+            ) : (
             <div className={`${catList.body && styles.CategoryItemContainer}`}>
                 <span className={styles.ItemText}>{catList.body}</span>
-                { showInput && <input type="text" autoFocus onChange={(e) => setCatBody(e.target.value)}/> }
-                {showInput ? (
-                    <div className={styles.BtnContainer}>
-                        <button type="button" className={styles.Btn} onClick={handleAdd}>+</button>
-                        <button type="button" className={styles.Btn} onClick={() => setShowInput(false)}>x</button>
-                    </div>
-                ): catList.body? (
+                {/* { showInput && <input type="text" className={styles.ItemText} autoFocus onChange={(e) => setCatBody(e.target.value)}/> } */}
+                {catList.body? (
                     <div className={styles.BtnContainer}>
                         <button type="button" className={styles.Btn} onClick={() => setShowInput(true)}>+</button>
-                        <button type="button" className={styles.Btn}>/</button>
+                        <button type="button" className={styles.Btn} onClick={() => setIsEdit(true)}>/</button>
                         <button type="button" className={styles.Btn} onClick={() => handleDeleteCategory(catList.id)}>x</button>
                     </div>
                 ): null}
             </div>
-            <div className={styles.ItemContainer}>
+            )}
+            <div className={styles.ItemContainer}>                
                 {
                     catList?.subCategories?.map((item) => (
-                        <div >
-                            <CatItem key={item.id} handleDeleteCategory={handleDeleteCategory} handleAddCategory={handleAddCategory} catList={item} />
-                        </div>
+                        <ul className={styles.CategoryList}>
+                            <CatItem key={item.id} handleDeleteCategory={handleDeleteCategory} handleEditCategory={handleEditCategory} handleAddCategory={handleAddCategory} catList={item} />
+                        </ul>
                     ))
                 }
-
+                {showInput && 
+                    <div className={styles.CategoryItemAddingContainer}>
+                        <input type="text" className={styles.ItemText} autoFocus onChange={(e) => setCatBody(e.target.value)} />
+                        <div className={styles.BtnContainer}>
+                            <button type="button" className={styles.Btn} onClick={handleAdd}>+</button>
+                            <button type="button" className={styles.Btn} onClick={() => setShowInput(false)}>x</button>
+                        </div>
+                    </div>
+                }
             </div>
-        </div>
+            
+
+        </li>
     )
 }

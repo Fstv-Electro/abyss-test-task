@@ -34,10 +34,5 @@ export interface ICategoryListProps {
     catList: ICategoryList;
     handleAddCategory: (id: number, catBody: ICategoryList) => void;
     handleDeleteCategory: (id: number) => void;
-}
-
-export interface IAddCategoryProps {
-    tree: ICategoryList;
-    id: number;
-    newCategory: ICategoryList;
-}
+    handleEditCategory: (id: number, newCategory: ICategoryList) => void;
+};

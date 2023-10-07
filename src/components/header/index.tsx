@@ -18,9 +18,7 @@ export const Header: FC = () => {
                     <button type='button' className='Button-action'>LIST VIEW</button>
                     <button type='button' className='Button-action' onClick={() => window.scrollTo(window.screen.availWidth*0.3,window.screen.availHeight*1.2)}>Compass</button>
                     <div className='Scaling-container'>
-                        <button type='button' className='Button-action' onClick={() => {
-                            window.resizeBy(window.screen.availWidth*0.9, window.screen.availHeight*0.9)
-                        }}>-</button>
+                        <button type='button' className='Button-action'>-</button>
                         <select value={scaling} id="select-scaling" className='Button-action' onChange={(e)=> handleChangeScaling(e)}>
                             <option value="25">25%</option>
                             <option value="30">30%</option>
@@ -34,9 +32,7 @@ export const Header: FC = () => {
                             <option value="125">125%</option>
                             <option value="150">150%</option>
                         </select>
-                        <button type='button' className='Button-action' onClick={() => {
-                            window.resizeBy(window.screen.availWidth*1.1, window.screen.availHeight*1.1)
-                        }}>+</button>
+                        <button type='button' className='Button-action'>+</button>
                     </div>
                 </div>
             </div>

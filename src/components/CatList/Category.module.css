@@ -1,9 +1,17 @@
+.CategoryList {
+  /* position: relative; */
+  padding: 0;
+  margin: 0;
+  list-style: disc;
+}
+
 .CategoryContainer {
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* flex-wrap: wrap; */
+  gap: 32px;
 }
 
 .CategoryItemContainer {
@@ -14,9 +22,22 @@
   gap: 8px;
 }
 
+.CategoryItemAddingContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  height: 48px;
+  gap: 8px;
+}
+
 .BtnContainer {
   display: flex;
+  justify-content: center;
   align-items: center;
+  align-self: center;
   gap: 4px;
 }
 
@@ -29,16 +50,33 @@
   border: transparent;
   color: white;
   background-color: rgb(188, 186, 186);
+  cursor: pointer;
+}
+
+.MainItemText {
+  background-color: white;
+  border: transparent;
+  outline: transparent;
+  text-align: center;
+  min-width: 112px;
+  min-height: 32px;
+  padding: 8px;
 }
 
 .ItemText {
+  position: relative;
   background-color: white;
   border: transparent;
+  outline: transparent;
+  text-align: center;
+  min-width: 112px;
+  min-height: 32px;
   padding: 8px;
 }
 
 .ItemContainer {
   display: flex;
+  position: relative;
   gap: 32px;
   margin-top: 32px;
 }
