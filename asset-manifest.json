@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/abyss-test-task/static/css/main.3c5809be.css",
+    "main.js": "/abyss-test-task/static/js/main.bc7367bf.js",
+    "index.html": "/abyss-test-task/index.html",
+    "main.3c5809be.css.map": "/abyss-test-task/static/css/main.3c5809be.css.map",
+    "main.bc7367bf.js.map": "/abyss-test-task/static/js/main.bc7367bf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c5809be.css",
+    "static/js/main.bc7367bf.js"
+  ]
+}
