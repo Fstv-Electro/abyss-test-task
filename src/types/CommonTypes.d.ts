@@ -1,6 +1,7 @@
 export interface ICategory {
     id: number;
     body: string;
+    level: number;
     categories: Array<ICategory>;
 }
 
@@ -27,6 +28,7 @@ export interface IButtonInputProps {
 export interface ICategoryList {
     id: number;
     body: string;
+    level: number;
     subCategories: Array<ICategoryList>;
 }
 

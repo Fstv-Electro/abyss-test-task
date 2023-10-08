@@ -14,6 +14,7 @@ export const CatItem = ({ catList, handleAddCategory, handleDeleteCategory, hand
         const newCategory = {
             id: randomId,
             body: catBody,
+            level: catList.level + 1,
             subCategories: [],
         };
 
@@ -25,6 +26,7 @@ export const CatItem = ({ catList, handleAddCategory, handleDeleteCategory, hand
         const newCategory = {
             id: catList.id,
             body: catBody,
+            level: catList.level + 1,
             subCategories: catList.subCategories,
         };
         handleEditCategory(catList.id, newCategory);
@@ -52,8 +54,12 @@ export const CatItem = ({ catList, handleAddCategory, handleDeleteCategory, hand
                 {catList.body? (
                     <div className={styles.BtnContainer}>
                         <button type="button" className={styles.Btn} onClick={() => setShowInput(true)}>+</button>
-                        <button type="button" className={styles.Btn} onClick={() => setIsEdit(true)}>/</button>
-                        <button type="button" className={styles.Btn} onClick={() => handleDeleteCategory(catList.id)}>x</button>
+                                {catList.level !== 0 ? (
+                                    <>
+                                        <button type="button" className={styles.Btn} onClick={() => setIsEdit(true)}>/</button>
+                                        <button type="button" className={styles.Btn} onClick={() => handleDeleteCategory(catList.id)}>x</button>
+                                    </>
+                                ) : null}
                     </div>
                 ): null}
             </div>
