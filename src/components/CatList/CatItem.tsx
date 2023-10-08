@@ -6,7 +6,7 @@ import styles from './Category.module.css';
 
 export const CatItem = ({ catList, handleAddCategory, handleDeleteCategory, handleEditCategory }: ICategoryListProps) => {
     const [showInput, setShowInput] = useState(false);
-    const [catBody, setCatBody] = useState<string>('');
+    const [catBody, setCatBody] = useState<string>(catList.body);
     const [isEdit, setIsEdit] = useState(false);
     const randomId = Math.floor(Math.random() * 1000000000);
 
@@ -31,13 +31,15 @@ export const CatItem = ({ catList, handleAddCategory, handleDeleteCategory, hand
         setIsEdit(false)
     }
 
+
     return (
         <li className={styles.CategoryContainer}>
             {isEdit ? (
                 <div className={`${catList.body && styles.CategoryItemContainer}`}>
-                <input type="text" className={styles.ItemText} autoFocus
-value={catBody}
- onChange={(e) => setCatBody(e.target.value)}/>
+                    <input type="text" className={styles.ItemText}
+                        autoFocus
+                        value={catBody}
+                        onChange={(e) => setCatBody(e.target.value)}/>
                     <div className={styles.BtnContainer}>
                         <button type="button" className={styles.Btn} onClick={handleEdit}>+</button>
                         <button type="button" className={styles.Btn} onClick={() => setIsEdit(false)}>x</button>
