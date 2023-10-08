@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/abyss-test-task/static/css/main.3c5809be.css",
-    "main.js": "/abyss-test-task/static/js/main.a552fd1f.js",
+    "main.js": "/abyss-test-task/static/js/main.9a8b2afc.js",
     "index.html": "/abyss-test-task/index.html",
     "main.3c5809be.css.map": "/abyss-test-task/static/css/main.3c5809be.css.map",
-    "main.a552fd1f.js.map": "/abyss-test-task/static/js/main.a552fd1f.js.map"
+    "main.9a8b2afc.js.map": "/abyss-test-task/static/js/main.9a8b2afc.js.map"
   },
   "entrypoints": [
     "static/css/main.3c5809be.css",
-    "static/js/main.a552fd1f.js"
+    "static/js/main.9a8b2afc.js"
   ]
 }
